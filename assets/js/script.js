@@ -30,7 +30,7 @@ var generatePassword = function() {
    displayPassword = ""; 
 
   
-  window.alert("The criteria for password generator are lowercase, uppercase, numeric, and/or special characters.");
+  window.alert("The criteria for password generation are Lower Case, Upper Case, Numeric, and/or Special Characters.");
 
   var validInput = true;
 
@@ -38,9 +38,9 @@ var generatePassword = function() {
 
   while(validInput) {
     
-    userInput = window.prompt("Select criteria for password (you can select more than one) (use space): 1=lowercase 2=uppercase 3=numeric 4=special characters.\n");
+    userInput = window.prompt("Select criteria for password (you can select more than one) (use space): 1=Lower Case 2=Upper Case 3=Numeric 4=Special Characters.\n");
     if (!userInput) {
-      window.alert("If you wish to close the application, please close this password generator tab.")
+      window.alert("If you wish to close the application, please close the tab.")
       generatePassword();
       } else if (userInput) {
                 
@@ -72,7 +72,7 @@ var generatePassword = function() {
             generatePassword(); 
           }
           else { 
-            window.alert(" Please select a criteria using numbers 1-4 seperated by space.\n\n" + "User input: " + inputCriteria + " is invalid");
+            window.alert("Please select a criteria using numbers 1-4 seperated by one space.\n\n" + "User input: " + inputCriteria + " is invalid");
             generatePassword(); 
           } 
       }
@@ -111,7 +111,7 @@ var generatePassword = function() {
         round1Shift = validateInput.shift();
         round1Pop = validateInput.pop();
         if (round1Shift === round1Pop) {
-          window.alert("Duplication detected, please check criteria rules.");
+          window.alert("Duplicate error, please check your criteria");
           generatePassword();
         } 
         
@@ -133,23 +133,23 @@ var generatePassword = function() {
 
 
           if (round1Shift === round2Shift) {
-            window.alert("Duplication detected, please check criteria rules.");
+            window.alert("Duplicate error, please check your criteria");
             generatePassword();
           } else if (round1Pop === round2Pop) {
-            window.alert("Duplication detected, please check criteria rules.");
+            window.alert("Duplicate error, please check your criteria");
             generatePassword();
           } else if (round1Shift === round2Pop) {
-            window.alert("Duplication detected, please check criteria rules.");
+            window.alert("Duplicate error, please check your criteria");
             generatePassword();
           } else if (round1Pop === round2Shift) {
-            window.alert("Duplication detected, please check criteria rules.");
+            window.alert("Duplicate error, please check your criteria");
             generatePassword();
           } 
             else if (round1Shift === round1Pop) {
-            window.alert("Duplication detected, please check criteria rules.");
+            window.alert("Duplicate error, please check your criteria");
             generatePassword();
           } else if (round2Shift === round2Pop) {
-            window.alert("Duplication detected, please check criteria rules.");
+            window.alert("Duplicate error, please check your criteria");
             generatePassword();
           } 
           else {
@@ -169,14 +169,14 @@ function passLength () {
   var pLength = parseInt(window.prompt("Please enter length")); 
   if (pLength < 8 || pLength > 128) {
     
-    window.alert("Please enter a valid number between 8-128");
+    window.alert("Please enter number between 8-128");
     passLength();
 
   } else if (!pLength) { 
-    window.alert("Please enter a valid number between 8-128")
+    window.alert("Please enter number between 8-128")
     passLength(); 
   } else {
-    window.alert("You have entered a valid length of: " + pLength + "\n Password will now be generated");
+    window.alert("You have entered a length of: " + pLength + "\n Password will now be generated");
     return pLength; 
   }
 }
